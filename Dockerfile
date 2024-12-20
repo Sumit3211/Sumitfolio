@@ -30,4 +30,8 @@ WORKDIR /app
 EXPOSE 8080
 
 # Command to run the application
+<<<<<<< HEAD
 CMD ["java", "-jar", "app.jar"]
+=======
+CMD ["java", "-jar", "app.jar"]
+>>>>>>> 6dfcaca (Initial commit of Sumitfolio project)

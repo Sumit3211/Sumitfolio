@@ -30,6 +30,7 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,6 +63,36 @@
 	</dependencies>
 
 			<build>
+=======
+		<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!-- Thymeleaf -->
+		<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<!-- Development Tools -->
+		<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<scope>runtime</scope>
+				<optional>true</optional>
+		</dependency>
+		
+		<!-- Testing -->
+		<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<scope>test</scope>
+		</dependency>
+  </dependencies>
+    
+    <build>
+>>>>>>> 6dfcaca (Initial commit of Sumitfolio project)
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
