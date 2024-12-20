@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${name} + ' | ' + ${title}">Sumit Kushwaha | Java Developer</title>
+    
+    <!-- Include header head fragment -->
+    <th:block th:replace="~{fragments/header :: header-head}"></th:block>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Navigation -->
+    <th:block th:replace="~{fragments/header :: navigation}"></th:block>
+
+    <!-- Hero Section -->
+    <th:block th:replace="~{fragments/sections/hero :: hero}"></th:block>
+
+    <!-- About Section -->
+    <th:block th:replace="~{fragments/sections/about :: about}"></th:block>
+
+    <!-- Skills Section -->
+    <th:block th:replace="~{fragments/sections/skills :: skills}"></th:block>
+
+    <!-- Projects Section -->
+    <th:block th:replace="~{fragments/sections/projects :: projects}"></th:block>
+
+    <!-- Contact Section -->
+    <th:block th:replace="~{fragments/sections/contact :: contact}"></th:block>
+
+    <!-- Footer -->
+    <th:block th:replace="~{fragments/footer :: footer}"></th:block>
+
+    <!-- Scripts -->
+    <script th:src="@{/js/navigation.js}"></script>
+    <script th:src="@{/js/dark-mode.js}"></script>
+    <script th:src="@{/js/animations.js}"></script>
+</body>
+</html>

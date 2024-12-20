@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <!-- Footer Fragment -->
+    <footer th:fragment="footer" 
+            class="bg-gray-900 text-white py-12 dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p>Email: sumit.kushwaha@example.com</p>
+                    <p>Phone: +91 1234567890</p>
+                    <p>Location: India</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-500 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-500 transition">About</a></li>
+                        <li><a href="#projects" class="hover:text-blue-500 transition">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-blue-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-blue-500 transition">LinkedIn</a>
+                        <a href="#" class="hover:text-blue-500 transition">GitHub</a>
+                        <a href="#" class="hover:text-blue-500 transition">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="text-center mt-8 pt-8 border-t border-gray-700">
+                <p>&copy; 2024 Sumit Kushwaha. All Rights Reserved.</p>
+                <p class="text-sm mt-2">Built with Spring Boot, Thymeleaf, and Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

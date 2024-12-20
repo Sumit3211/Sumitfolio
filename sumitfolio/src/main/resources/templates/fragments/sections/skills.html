@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="skills-head">
+    <title>Skills Section</title>
+</head>
+<body>
+    <!-- Skills Section Fragment -->
+    <section th:fragment="skills" id="skills" class="py-16 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div th:each="skill : ${skills}" 
+                     class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 th:text="${skill.split(':')[0]}" class="text-xl font-semibold">Skill Name</h3>
+                        <span th:text="${skill.split(':')[1]} + '%'" class="text-blue-600 font-bold">90%</span>
+                    </div>
+                    
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                        <div th:style="'width:' + ${skill.split(':')[1]} + '%'" 
+                             class="bg-blue-500 h-3 rounded-full skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-semibold mb-6">Additional Technologies</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full">Docker</span>
+                    <span class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full">Kubernetes</span>
+                    <span class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full">Jenkins</span>
+                    <span class="bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
