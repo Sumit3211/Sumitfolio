@@ -1,47 +1,46 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<body>
+<html xmlns:th="http://www.thymeleaf.org" class="dark"> <!-- Add dark mode class to the <html> tag -->
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white"> <!-- Body with dark mode background and text color -->
+
     <!-- Footer Fragment -->
     <footer th:fragment="footer" 
-            class="bg-gray-900 text-white py-12 dark:bg-gray-800 transition-colors duration-300">
+            class="bg-gray-900 text-white py-12 dark:bg-gray-800 dark:text-white transition-colors duration-300">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Contact Information -->
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Contact</h3>
-                    <p>Email: sumit.kushwaha@example.com</p>
-                    <p>Phone: +91 1234567890</p>
-                    <p>Location: India</p>
-                </div>
+                
                 
                 <!-- Quick Links -->
                 <div>
                     <h3 class="text-xl font-bold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-blue-500 transition">Home</a></li>
-                        <li><a href="#about" class="hover:text-blue-500 transition">About</a></li>
-                        <li><a href="#projects" class="hover:text-blue-500 transition">Projects</a></li>
-                        <li><a href="#contact" class="hover:text-blue-500 transition">Contact</a></li>
+                        <li><a href="#home" class="hover:text-blue-500 dark:hover:text-blue-300 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-blue-500 dark:hover:text-blue-300 transition">About</a></li>
+                        <li><a href="#projects" class="hover:text-blue-500 dark:hover:text-blue-300 transition">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-blue-500 dark:hover:text-blue-300 transition">Contact</a></li>
                     </ul>
                 </div>
                 
                 <!-- Social Media -->
                 <div>
                     <h3 class="text-xl font-bold mb-4">Connect</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-blue-500 transition">LinkedIn</a>
-                        <a href="#" class="hover:text-blue-500 transition">GitHub</a>
-                        <a href="#" class="hover:text-blue-500 transition">Twitter</a>
-                    </div>
+                    <ul class="space-y-2">
+                        <li><a href="https://www.linkedin.com/in/sumit-kushwaha-063642173/" class="hover:text-blue-500 dark:hover:text-blue-300 transition">LinkedIn</a></li>
+                        <li><a href="https://github.com/Sumit3211" class="hover:text-blue-500 dark:hover:text-blue-300 transition">GitHub</a></li>
+                        
+                    </ul>
                 </div>
             </div>
             
             <!-- Copyright -->
             <div class="text-center mt-8 pt-8 border-t border-gray-700">
-                <p>&copy; 2024 Sumit Kushwaha. All Rights Reserved.</p>
+                <p>&copy; 2024 Sumit Kushwaha. Suiiiii.</p>
                 <p class="text-sm mt-2">Built with Spring Boot, Thymeleaf, and Tailwind CSS</p>
+                <div class="mt-4">
+                    <img src="/images/gif/cr7.gif" alt="Gif" class="mx-auto">
+                </div>
             </div>
         </div>
     </footer>
+
 </body>
 </html>

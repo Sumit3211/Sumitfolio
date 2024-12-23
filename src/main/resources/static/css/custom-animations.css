@@ -1,28 +1,43 @@
-/* Typewriter Effect */
-.typewriter-container {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
+/* Typewriter Animation */
 .typewriter {
-  animation: typewriter 2s steps(40, end), blink-caret 0.75s step-end infinite;
   display: inline-block;
-  max-width: 0;
-  white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid black;
+  border-right: 0.15em solid black;
+  white-space: nowrap;
+  width: 0;
+  animation: 
+      typewriter 4s steps(40) forwards,
+      blink-caret 0.75s steps(44) 4s forwards;
 }
 
 @keyframes typewriter {
-  from { max-width: 0; }
-  to { max-width: 100%; }
+  from { 
+      width: 0; 
+  }
+  to { 
+      width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: black; }
+  from, to { 
+      border-right-color: black;
+  }
+  99% {
+      border-right-color: black;
+  }
+  100% {
+      border-right-color: transparent;
+  }
 }
 
+
+
+/* Optional: Add smooth reveal */
+.typewriter span {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
 /* Hover Effects */
 .project-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -134,3 +149,85 @@ body, .dark-mode-transition {
       transition: none !important;
   }
 }
+
+
+
+
+
+
+/* skills css */ 
+.skill-card {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.skill-image {
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-image {
+    transform: scale(1.1);
+}
+
+.percentage-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(37, 99, 235, 0.9);
+    backdrop-filter: blur(4px);
+}
+
+.skill-card:hover .percentage-overlay {
+    opacity: 1;
+}
+
+/* Progress Bar Animation */
+.skill-progress {
+    animation: progress-bar 1.5s ease-out forwards;
+}
+
+@keyframes progress-bar {
+    from { width: 0; }
+    to { width: var(--progress); }
+}
+
+/* Fade In Animation */
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating Animation */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+
+

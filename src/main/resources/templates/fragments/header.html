@@ -43,9 +43,12 @@
          class="sticky top-0 z-40 bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
         <div class="container mx-auto flex justify-between items-center p-4">
             <!-- Logo/Name -->
-            <div class="text-2xl font-bold text-gray-900 dark:text-white">
-                <span th:text="${name}">Sumit Kushwaha</span>
-            </div>
+            <div class="flex items-center space-x-4">
+              <img src="/images/logo.png" alt="Logo" class="hidden md:block w-12 h-12">
+              <span th:text="${name}" class="text-2xl font-bold text-gray-900 dark:text-white hidden md:block">SumitFolio</span>
+              <!-- Mobile Logo (Just Logo) -->
+              <img src="/images/logo.png" alt="Logo" class="md:hidden w-12 h-12">
+          </div>
             
             <!-- Desktop Navigation -->
             <ul class="hidden md:flex space-x-6">
@@ -54,11 +57,19 @@
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="/files/Sumit Kushwaha - Java Dev.pdf" 
+                       class="nav-link text-red-500 hover:text-red-600 group relative">
+                        Resume
+                        <span class="absolute left-0 bottom-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs text-red-500">Download</span>
+                    </a>
+                </li>
             </ul>
             
-            <!-- Dark Mode Toggle -->
+            
+            <!-- Dark Mode Toggle Button for Header (Desktop & Mobile) -->
             <button id="dark-mode-toggle" 
-                    class="hidden md:block p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                    class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors md:block">
                 🌓
             </button>
             
@@ -73,9 +84,9 @@
             </div>
         </div>
         
-        <!-- Mobile Menu (Slide-in) -->
+        <!-- Sidebar (Mobile Menu) -->
         <div id="mobile-menu" 
-             class="fixed inset-0 bg-white dark:bg-gray-900 z-50 transform translate-x-full transition-transform duration-300 ease-in-out">
+             class="fixed inset-y-0 right-0 bg-white dark:bg-gray-900 z-50 transform translate-x-full transition-transform duration-300 ease-in-out w-2/3 md:w-1/4 md:hidden">
             <div class="flex justify-end p-4">
                 <button id="mobile-menu-close" 
                         class="text-gray-900 dark:text-white focus:outline-none">
@@ -84,18 +95,12 @@
                     </svg>
                 </button>
             </div>
-            <ul class="flex flex-col items-center space-y-6 mt-12">
+            <ul class="flex flex-col items-start space-y-6 mt-12 px-4">
                 <li><a href="#home" class="mobile-nav-link">Home</a></li>
                 <li><a href="#about" class="mobile-nav-link">About</a></li>
                 <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
                 <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
                 <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
-                <li>
-                    <button id="mobile-dark-mode-toggle" 
-                            class="p-3 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-                        Toggle Dark Mode
-                    </button>
-                </li>
             </ul>
         </div>
     </nav>

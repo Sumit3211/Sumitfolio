@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Floating Dark Mode Toggle -->
+    <button id="dark-mode-toggle" 
+            class="fixed top-4 right-4 z-50 p-3 rounded-full bg-gray-200/70 dark:bg-gray-700/70 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+        🌓
+    </button>
+
+    <!-- Floating Return Button (Top Left) -->
+    <a href="/" 
+       class="fixed top-4 left-4 z-50 p-3 rounded-full bg-gray-200/70 dark:bg-gray-700/70 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+        </svg>
+        <span class="hidden md:inline">Back to Projects</span>
+    </a>
+
+    <!-- Main content -->
+    <div class="flex">
+
+        <!-- Main Content Area -->
+        <div class="flex-1 p-8">
+            <section class="py-16">
+                <div class="container mx-auto px-4">
+                    <!-- Switch based on project ID -->
+                    <th:block th:switch="${projectId}">
+                        <!-- Project 1 -->
+                        <th:block th:case="1">
+                            <h1 class="text-4xl font-bold mb-8 text-center">E-Commerce Website</h1>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+                                <!-- Main placeholder image - made responsive -->
+                                <img src="/images/project/ecommerce/ecomlogo.jpg" alt="E-Commerce Website" class="w-full md:w-2/3 lg:w-1/2 mx-auto rounded-lg mb-6">
+                                
+                                <p class="text-lg mb-6">
+                                    A fully integrated e-commerce solution built using Spring Boot, Spring Security, OAuth, Thymeleaf, HTML, CSS, and MySQL. This platform offers a seamless shopping experience with robust functionalities, role-based authentication, and an intuitive admin dashboard.
+                                </p>
+                                
+                                <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+                                <ul class="list-disc ml-5 mb-6">
+                                    <li>
+                                        <strong>Login Page:</strong> Secure login for users using Spring Security, ensuring authentication and redirection based on user roles.
+                                        <img src="/images/project/ecommerce/ecom1.png" alt="Login Page" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>Register Page:</strong> Users can register, providing personal details, with input validation and secure data storage in MySQL.
+                                        <img src="/images/project/ecommerce/ecom2.png" alt="Register Page" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>Super Admin Page:</strong> A page for the Super Admin to manage admin roles and access control.
+                                        <img src="/images/project/ecommerce/ecom3.png" alt="Super Admin Page" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>Admin Management:</strong> Super Admins can create, edit, and delete admin accounts.
+                                        <img src="/images/project/ecommerce/ecom4.png" alt="Admin Management" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                        <img src="/images/project/ecommerce/ecom5.png" alt="Create Admin Page" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>Create Admin Page:</strong> Super Admins can create new admin accounts with privileges to manage the website.
+                                        <img src="/images/project/ecommerce/ecom6.png" alt="Product Management" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>Product Management:</strong> Admins can add, edit, and delete products, managing inventory seamlessly.
+                                        <img src="/images/project/ecommerce/ecom7.png" alt="Admin Dashboard" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>Admin Dashboard:</strong> Admins can manage product inventory, user orders, and view detailed statistics on sales.
+                                        <img src="/images/project/ecommerce/ecom8.png" alt="Admin Dashboard" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>Home Page:</strong> A user-friendly home page to browse products, filter by categories, and sort by price.
+                                        <img src="/images/project/ecommerce/ecom10.png" alt="Home Page" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                        <img src="/images/project/ecommerce/ecom11.png" alt="User Profile Page" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                    <li>
+                                        <strong>User Profile Page:</strong> Users can manage their profiles, view orders, track their shopping cart, and update account settings.
+                                        <img src="/images/project/ecommerce/ecom12.png" alt="User Profile Page" class="w-full md:w-2/3 lg:w-1/2 mx-auto mt-2 rounded-lg">
+                                    </li>
+                                </ul>
+                            </div>
+                        </th:block>
+
+
+                        <!-- Project 2 -->
+                        <th:block th:case="2">
+                            <h1 class="text-5xl font-bold mb-12 text-center">Bank Management System</h1>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-10">
+                                <!-- Main image with updated responsive sizing -->
+                                <img src="/images/project/bank/banklogo.png" alt="Bank Management System" class="w-full md:w-3/4   mx-auto rounded-lg">
+                                
+                                <p class="text-xl mb-10 leading-relaxed">
+                                    The Bank Management System is a RESTful API built with Spring Boot, designed for managing bank accounts, transactions, and user authentication. 
+                                    This system allows clients to perform actions such as account creation, deposits, withdrawals, and viewing account details through secure API endpoints.
+                                </p>
+                                
+                                <h3 class="text-2xl font-semibold mb-6">Tech Stack</h3>
+                                <div class="flex flex-wrap gap-3 mb-10">
+                                    <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded text-lg">Java</span>
+                                    <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded text-lg">Spring Boot</span>
+                                    <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 rounded text-lg">REST APIs</span>
+                                </div>
+
+                                <h3 class="text-2xl font-semibold mb-6">Features</h3>
+                                <ul class="list-disc space-y-8 ml-6 mb-10">
+                                    <li class="text-lg">
+                                        <div class="flex flex-col">
+                                            <span class="font-semibold mb-4">User Account Creation</span>
+                                            <!-- Updated account creation image sizing -->
+                                            <img src="/images/project/bank/bank2.png" alt="User Account Creation" class="w-full sm:w-4/5 md:w-3/4 lg:w-4/5 xl:w-full mx-auto rounded-lg"> 
+                                            <p class="mt-4">User account creation via API with secure validation</p>
+                                        </div>
+                                    </li>
+                                    <li class="text-lg">
+                                        <div class="flex flex-col">
+                                            <span class="font-semibold mb-4">Deposit and Withdrawal</span>
+                                            <!-- Updated deposit/withdrawal images container -->
+                                            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                                                <img src="/images/project/bank/bank4.png" alt="Deposit" class="w-11/12 sm:w-3/4 md:w-2/5 lg:w-2/5 xl:w-2/5 mx-auto rounded-lg mb-4 md:mb-0">
+                                                <img src="/images/project/bank/bank5.png" alt="Withdrawal" class="w-11/12 sm:w-3/4 md:w-2/5 lg:w-2/5 xl:w-2/5 mx-auto rounded-lg">
+                                            </div>
+                                            <p class="mt-4">Deposit and withdrawal functionality for managing account balances</p>
+                                        </div>
+                                    </li>
+                                    <li class="text-lg">
+                                        <div class="flex flex-col">
+                                            <span class="font-semibold mb-2">Account Details</span>
+                                            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                                                <img src="/images/project/bank/bank3.png" alt="Deposit" class="w-11/12 sm:w-3/4 md:w-2/5 lg:w-2/5 xl:w-2/5 mx-auto rounded-lg mb-4 md:mb-0">
+                                                <img src="/images/project/bank/bank1.png" alt="Withdrawal" class="w-11/12 sm:w-3/4 md:w-2/5 lg:w-2/5 xl:w-2/5 mx-auto rounded-lg">
+                                            </div>
+                                            <p>Account details retrieval with the balance and user information</p>
+                                        </div>
+                                    </li>
+                                    <li class="text-lg">
+                                        <div class="flex flex-col">
+                                            <span class="font-semibold mb-2">Account Management</span>
+                                            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                                                <img src="/images/project/bank/bank6.png" alt="Deposit" class="w-11/12 sm:w-3/4 md:w-2/5 lg:w-2/5 xl:w-2/5 mx-auto rounded-lg mb-4 md:mb-0">
+                                            </div>
+                                            <p>Account deletion via API with proper validation</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <h3 class="text-2xl font-semibold mb-6">API Endpoints</h3>
+                                <p class="text-xl mb-6">
+                                    The system exposes the following RESTful API endpoints:
+                                </p>
+                                
+                                <!-- Make the table horizontally scrollable -->
+                                <div class="overflow-x-auto mb-10">
+                                    <table class="table-auto w-full text-sm sm:text-base">
+                                        <thead>
+                                            <tr class="bg-gray-50 dark:bg-gray-700">
+                                                <th class="px-4 sm:px-6 py-2 sm:py-4 border">HTTP Method</th>
+                                                <th class="px-4 sm:px-6 py-2 sm:py-4 border">Endpoint</th>
+                                                <th class="px-4 sm:px-6 py-2 sm:py-4 border">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">POST</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">/account/create</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">Creates a new bank account with user details.</td>
+                                            </tr>
+                                            <tr class="bg-gray-50 dark:bg-gray-700">
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">GET</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">/account/{id}</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">Fetch account details by account number.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">GET</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">/account/getallaccount</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">Get a list of all bank accounts.</td>
+                                            </tr>
+                                            <tr class="bg-gray-50 dark:bg-gray-700">
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">PUT</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">/account/deposit/{accountNumber}/{amount}</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">Deposit an amount into an existing account.</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">PUT</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">/account/withdraw/{accountNumber}/{amount}</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">Withdraw an amount from an existing account.</td>
+                                            </tr>
+                                            <tr class="bg-gray-50 dark:bg-gray-700">
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">DELETE</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">/account/delete/{accountNumber}</td>
+                                                <td class="px-4 sm:px-6 py-2 sm:py-4 border">Delete an existing account.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </th:block>
+
+                        <!-- Project 3 -->
+                        <th:block th:case="3">
+                            <h1 class="text-4xl font-bold mb-8 text-center">Chat Application</h1>
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+                               
+                                
+                                <p class="text-lg mb-6">
+                                    A real-time messaging platform built using <strong>Spring Boot</strong> and <strong>WebSocket</strong> for instant communication. 
+                                    The application supports a seamless user experience, allowing users to send and receive messages in real-time. 
+                                    With WebSocket integration, it offers instant messaging functionality, ensuring a responsive chat environment.
+                                </p>
+                                
+                                <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+                                <ul class="list-disc list-inside mb-6">
+                                    <li><strong>Real-time Messaging:</strong> Send and receive messages instantly using WebSocket and STOMP.</li>
+                                    <li><strong>User Authentication:</strong> Users can input their names to join the chat room.</li>
+                                    <li><strong>Broadcasting:</strong> Messages are broadcasted to all connected clients in the chat room.</li>
+                                    <li><strong>Responsive Design:</strong> Built with Bootstrap for a responsive, user-friendly interface across all devices.</li>
+                                    <li><strong>Simple Interface:</strong> The app provides an intuitive UI for seamless user experience.</li>
+                                </ul>
+
+                                <h3 class="text-xl font-semibold mb-4">Tech Stack</h3>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded">Java</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded">Spring Boot</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded">WebSocket</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded">JavaScript</span>
+                                    <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 rounded">Bootstrap</span>
+                                </div>
+
+                                <h3 class="text-xl font-semibold mb-4">Technologies Used</h3>
+                                <p class="mb-6">
+                                    The project utilizes <strong>Spring Boot</strong> to handle the backend, implementing WebSocket for real-time communication. 
+                                    On the front-end, <strong>Bootstrap</strong> ensures a responsive design, while <strong>JavaScript</strong> is used to handle the interaction between the client and server.
+                                </p>
+
+                                <h3 class="text-xl font-semibold mb-4">Messaging Flow</h3>
+                                <p class="mb-6">
+                                    Below are images showing the flow of messages being sent and received in the chat application:
+                                </p>
+                                
+                                <!-- Sending Message -->
+                                <div class="mb-6 text-center">
+                                    <h4 class="text-lg font-semibold mb-2">Sending Message</h4>
+                                    <img src="/images/project/chat/chat1.png" alt="Sending Message" class="w-full md:w-1/2 rounded-lg mx-auto mb-6">
+                                </div>
+
+                                <!-- Receiving Message -->
+                                <div class="mb-6 text-center">
+                                    <h4 class="text-lg font-semibold mb-2">Receiving Message</h4>
+                                    <img src="/images/project/chat/chat2.png" alt="Receiving Message" class="w-full md:w-1/2 rounded-lg mx-auto mb-6">
+                                </div>
+                            </div>
+                        </th:block>
+
+                    <!-- Back button -->
+                    <div class="mt-8 text-center">
+                        <a href="/" class="text-blue-500 hover:underline">← Back to Projects</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div id="sidebar" class="fixed top-0 right-0 w-64 bg-gray-800 text-white h-full transform translate-x-full transition-all duration-300">
+        <div class="p-6">
+            <h2 class="text-xl font-semibold mb-4">Project Navigation</h2>
+            <ul>
+                <li><a href="/" class="text-blue-400 hover:text-blue-500">Back to Home</a></li>
+                <li><a href="/projects" class="text-blue-400 hover:text-blue-500">All Projects</a></li>
+                <li><a href="#" class="text-blue-400 hover:text-blue-500">Project Updates</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Include the dark mode script -->
+    <script th:src="@{/js/dark-mode.js}"></script>
+    <!-- Add any other necessary scripts -->
+    <script th:src="@{/js/animations.js}"></script>
+
+    
+</body>
+</html>

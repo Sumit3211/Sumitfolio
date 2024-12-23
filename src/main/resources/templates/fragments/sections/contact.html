@@ -6,49 +6,18 @@
 <body>
     <!-- Contact Section Fragment -->
     <section th:fragment="contact" id="contact" class="py-16 bg-gray-100 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Contact Me</h2>
-            
+        <div class="container mx-auto px-4">            
             <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md">
-                <form class="space-y-6">
-                    <div>
-                        <label for="name" class="block mb-2 text-gray-600 dark:text-gray-300">Name</label>
-                        <input type="text" id="name" 
-                               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                    For inquiries, please email me at 
                     
+                    <a href="mailto:sumitkushwaha33@gmail.com" class="text-blue-500 hover:text-blue-600 mb-5 block">sumitkushwaha33@gmail.com</a>
+                    <!-- Contact Information -->
                     <div>
-                        <label for="email" class="block mb-2 text-gray-600 dark:text-gray-300">Email</label>
-                        <input type="email" id="email" 
-                               class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p>Phone: +91 9768901393</p>
+                        <p>Location: (Dombivali)NaviMumbai,Maharashtra,India</p>
                     </div>
-                    
-                    <div>
-                        <label for="message" class="block mb-2 text-gray-600 dark:text-gray-300">Message</label>
-                        <textarea id="message" rows="4" 
-                                  class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    </div>
-                    
-                    <button type="submit" 
-                            class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors">
-                        Send Message
-                    </button>
-                </form>
-                
-                <div class="mt-8 text-center">
-                    <h3 class="text-xl font-semibold mb-4">Connect with Me</h3>
-                    <div class="flex justify-center space-x-6">
-                        <a href="#" class="social-icon text-gray-700 dark:text-gray-300 hover:text-blue-500">
-                            LinkedIn
-                        </a>
-                        <a href="#" class="social-icon text-gray-700 dark:text-gray-300 hover:text-blue-500">
-                            GitHub
-                        </a>
-                        <a href="#" class="social-icon text-gray-700 dark:text-gray-300 hover:text-blue-500">
-                            Twitter
-                        </a>
-                    </div>
-                </div>
+                </p>
             </div>
         </div>
     </section>
